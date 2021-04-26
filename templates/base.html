@@ -1,0 +1,40 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
+
+    {% block stylesheet_link %}
+    {% endblock %}
+    <title> {% block title %}{% endblock %} </title>
+
+   {% block stylesheet %}
+   {% endblock %}
+
+  </head>
+  <body>
+
+
+  {% block maincontent %}
+  {% endblock %}
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="{% static 'js/jQuery.js' %}"></script>
+  <script src="{% static 'js/popper.min.js' %}"></script>
+  <script src="{% static 'js/bootstrap.min.js' %}"></script>
+
+
+   <script src="{% static 'js/message.js' %}"></script>
+   {% block script_link %}
+   {% endblock %}
+
+   {% block script_code %}
+   {% endblock %}
+  </body>
+</html>
