@@ -13,5 +13,6 @@ from . import views
 
 urlpatterns = [
     path('', views.Homepage, name="homepage"),
+    path('form-send_database/', views.Send_database, name="formDatabase"),
 
 ]
