@@ -34,6 +34,10 @@ def Send_database(request):
                     'msg': 0  # 0 mens error
                 })
 
+
+0
+
+
 # second way
 # if request.method == 'POST':
 #     name = request.POST['name'],
@@ -42,3 +46,19 @@ def Send_database(request):
 #
 #     MyUser.objects.create(name=name, password=password, email=email)
 #     return HttpResponse("")
+
+def DeleteData(request):
+    if request.method == 'POST':
+        id = request.POST.get('sid')
+        pi = MyUser.objects.get(pk=id)
+        pi.delete()
+        return JsonResponse({'status': 1})
+    else:
+        return JsonResponse({'status': 0})
+
+
+def Edit_data(request):
+    if request.method == 'POST':
+        id = request.POST.get('sid')
+        pi = MyUser.objects.get(pk=id)
+        return JsonResponse(" ")

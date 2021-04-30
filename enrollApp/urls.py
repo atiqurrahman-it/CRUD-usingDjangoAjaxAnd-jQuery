@@ -14,5 +14,7 @@ from . import views
 urlpatterns = [
     path('', views.Homepage, name="homepage"),
     path('form-send_database/', views.Send_database, name="formDatabase"),
+    path('deletedata/', views.DeleteData, name="delete"),
+    path('editData/', views.Edit_data, name="edit_data"),
 
 ]
