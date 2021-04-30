@@ -37,7 +37,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="C:\atiqur_rahman\desktop_file\django\ajaxCrudProject\envfile"
+VIRTUAL_ENV="C:\atiqur_rahman\desktop_file\Django_total_project\ajaxCrudProject\envfile"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"

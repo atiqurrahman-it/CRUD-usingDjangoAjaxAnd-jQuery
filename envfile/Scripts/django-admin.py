@@ -1,4 +1,4 @@
-#!c:\atiqur_rahman\desktop_file\django\ajaxcrudproject\envfile\scripts\python.exe
+#!c:\atiqur_rahman\desktop_file\django_total_project\ajaxcrudproject\envfile\scripts\python.exe
 # When the django-admin.py deprecation ends, remove this script.
 import warnings
 

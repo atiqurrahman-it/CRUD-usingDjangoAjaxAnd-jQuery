@@ -8,7 +8,7 @@ if defined _OLD_CODEPAGE (
     "%SystemRoot%\System32\chcp.com" 65001 > nul
 )
 
-set VIRTUAL_ENV=C:\atiqur_rahman\desktop_file\django\ajaxCrudProject\envfile
+set VIRTUAL_ENV=C:\atiqur_rahman\desktop_file\Django_total_project\ajaxCrudProject\envfile
 
 if not defined PROMPT set PROMPT=$P$G
 
