@@ -1,4 +1,4 @@
-from django.shortcuts import render, HttpResponse
+from django.shortcuts import render
 from .forms import StudentRegistrationForm
 from .models import MyUser
 from django.http import JsonResponse
@@ -21,7 +21,22 @@ def Send_database(request):
         if request.method == 'POST':
             form = StudentRegistrationForm(request.POST)
             if form.is_valid():
-                form.save()
+                sid = request.POST.get("studId")
+
+                if (sid == ""):
+                    form.save()
+
+                else:
+
+                    name = request.POST['name']
+                    email = request.POST['email']
+                    password = request.POST['password']
+
+                    user = MyUser(id=sid, name=name, email=email, password=password)
+                    user.save()
+                    # Edit button a click
+                    # form.id = sid
+
                 stu = MyUser.objects.values()  # index page a MyUser Data show er jonno
                 st_data = list(stu)  # student_data data  convert list
 
@@ -35,9 +50,6 @@ def Send_database(request):
                 })
 
 
-0
-
-
 # second way
 # if request.method == 'POST':
 #     name = request.POST['name'],
@@ -46,11 +58,10 @@ def Send_database(request):
 #
 #     MyUser.objects.create(name=name, password=password, email=email)
 #     return HttpResponse("")
-
 def DeleteData(request):
     if request.method == 'POST':
-        id = request.POST.get('sid')
-        pi = MyUser.objects.get(pk=id)
+        ed = request.POST.get('sid')
+        pi = MyUser.objects.get(pk=ed)
         pi.delete()
         return JsonResponse({'status': 1})
     else:
@@ -59,6 +70,8 @@ def DeleteData(request):
 
 def Edit_data(request):
     if request.method == 'POST':
-        id = request.POST.get('sid')
-        pi = MyUser.objects.get(pk=id)
-        return JsonResponse(" ")
+        getid = request.POST.get('sid')
+        student = MyUser.objects.get(pk=getid)
+        student_inf_data = {"id": student.id, "name": student.name, "email": student.email,
+                            "password": student.password}
+        return JsonResponse(student_inf_data)
